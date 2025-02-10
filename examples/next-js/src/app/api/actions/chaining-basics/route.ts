@@ -142,9 +142,13 @@ export const POST = async (req: Request) => {
   } catch (err) {
     console.log(err);
     let actionError: ActionError = { message: "An unknown error occurred" };
-    if (typeof err == "string") actionError.message = err;
+    let status = 500;
+    if (typeof err == "string") {
+      actionError.message = err;
+      status = 400;
+    }
     return Response.json(actionError, {
-      status: 400,
+      status: status,
       headers,
     });
   }
