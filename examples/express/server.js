@@ -137,7 +137,7 @@ async function postTransferSol(req, res) {
 
     res.json(payload);
   } catch (err) {
-    res.status(400).json({ error: err.message || "An unknown error occurred" });
+    res.status(400).json({ error: err.message || "An undescribed error occurred" });
   }
 }
 

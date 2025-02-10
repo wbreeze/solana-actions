@@ -89,7 +89,7 @@ export const POST = async (req: Request) => {
     });
   } catch (err) {
     console.log(err);
-    let actionError: ActionError = { message: "An unknown error occurred" };
+    let actionError: ActionError = { message: "An error occurred" };
     if (typeof err == "string") actionError.message = err;
     return Response.json(actionError, {
       status: 400,
